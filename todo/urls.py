@@ -7,8 +7,9 @@ router = DefaultRouter()
 router.register(r'todos', views.TodoViewSet, basename='todo')
 
 urlpatterns = [
-    #path('',views.home),
-    path('home/', views.home, name='Login'),
+    path('view/', views.view_todo, name='view_todo'),
     path('create/', views.create_todo, name='create_todo'),
-    #path('home/', include(router.urls))
+    path('mark_completed/<int:pk>/', views.mark_todo_completed, name='mark_todo_completed'),
+    path('delete/<int:pk>/', views.delete_todo, name='delete_todo'),
+    
 ]
